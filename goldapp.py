@@ -247,7 +247,7 @@ if st.button("Calculate Loan Terms"):
         **Risk Calculations:**
         - Probability of Default (PD): {pd1*100:.1f}%
         - Loss Given Default (LGD): {lgd*100:.1f}%
-        - Expected Loss = {pd*100:.1f}% × {lgd*100:.1f}% × ₹{loan_amount:,.2f} = ₹{expected_loss:,.2f}
+        - Expected Loss = {pd1*100:.1f}% × {lgd*100:.1f}% × ₹{loan_amount:,.2f} = ₹{expected_loss:,.2f}
         - Expected Loss Rate = ₹{expected_loss:,.2f} / ₹{loan_amount:,.2f} = {expected_loss_rate*100:.2f}%
         
         **Capital Requirements:**
