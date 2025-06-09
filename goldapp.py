@@ -245,7 +245,7 @@ if st.button("Calculate Loan Terms"):
         - Loan Amount = {ltv*100:.1f}% × ₹{gold_value:,.2f} = ₹{loan_amount:,.2f}
         
         **Risk Calculations:**
-        - Probability of Default (PD): {pd*100:.1f}%
+        - Probability of Default (PD): {pd1*100:.1f}%
         - Loss Given Default (LGD): {lgd*100:.1f}%
         - Expected Loss = {pd*100:.1f}% × {lgd*100:.1f}% × ₹{loan_amount:,.2f} = ₹{expected_loss:,.2f}
         - Expected Loss Rate = ₹{expected_loss:,.2f} / ₹{loan_amount:,.2f} = {expected_loss_rate*100:.2f}%
