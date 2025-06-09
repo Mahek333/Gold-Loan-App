@@ -54,10 +54,10 @@ def calculate_pd(cibil, monthly_income, work_exp, age, dti, tenure, existing_cus
         pd_score += 0.15
     
     # Convert score to probability (0-1 range)
-    pd = 1 / (1 + np.exp(-pd_score))  # Logistic function to keep between 0-1
+    pd1 = 1 / (1 + np.exp(-pd_score))  # Logistic function to keep between 0-1
     
     # Cap at 30% max PD
-    return min(pd, 0.3)
+    return min(pd1, 0.3)
 
 # Function to calculate LTV
 def calculate_ltv(cibil, monthly_income, work_exp, age, dti, tenure, existing_customer, agriculture):
@@ -155,7 +155,7 @@ if st.button("Calculate Loan Terms"):
     gold_value = gold_weight * gold_rate * purity_multiplier
     
     # Calculate PD, LTV, LGD
-    pd = calculate_pd(cibil, monthly_income, work_exp, age, dti, tenure, existing_customer, agriculture)
+    pd1 = calculate_pd(cibil, monthly_income, work_exp, age, dti, tenure, existing_customer, agriculture)
     ltv = calculate_ltv(cibil, monthly_income, work_exp, age, dti, tenure, existing_customer, agriculture)
     lgd = calculate_lgd()
     
@@ -163,7 +163,7 @@ if st.button("Calculate Loan Terms"):
     loan_amount = ltv * gold_value
     
     # Calculate expected loss
-    expected_loss = pd * lgd * loan_amount
+    expected_loss = pd1 * lgd * loan_amount
     
     # Calculate intermediate metrics
     expected_loss_rate = expected_loss / loan_amount if loan_amount > 0 else 0
