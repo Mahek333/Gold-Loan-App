@@ -191,7 +191,7 @@ if st.button("Calculate Loan Terms"):
         st.metric("Loan Amount (₹)", f"{loan_amount:,.2f}")
     
     with col3:
-        st.metric("PD", f"{pd*100:.1f}%")
+        st.metric("PD", f"{pd1*100:.1f}%")
         st.metric("Expected Loss (₹)", f"{expected_loss:,.2f}")
     
     # Rate breakdown
